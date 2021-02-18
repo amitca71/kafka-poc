@@ -4,3 +4,4 @@ kafka with mounted UDF for ksql manipulation
 #select encrypted and decrypted with vwap as decryptor and dcr as decryptor
 SELECT ticker,vwap(ticker),dcr(vwap(ticker))  FROM raw_quotes EMIT CHANGES LIMIT 12;
 SELECT ticker, ENCODE(ticker,'utf8', 'base64') AS encoded, dcr(ENCODE(ticker, 'utf8', 'base64'))  FROM raw_quotes EMIT CHANGES LIMIT 12;
+SELECT ticker,  ENCODE(ENCODE(ticker, 'utf8', 'base64'), 'base64', 'utf8')  FROM raw_quotes EMIT CHANGES LIMIT 12;
