@@ -1,0 +1,5 @@
+https://kafka-tutorials.confluent.io/udf/ksql.html#initialize-the-project
+https://github.com/google/tink/blob/master/docs/JAVA-HOWTO.md
+kafka with mounted UDF for ksql manipulation
+#select encrypted and decrypted with vwap as decryptor and dcr as decryptor
+SELECT ticker,vwap(ticker),dcr(vwap(ticker))  FROM raw_quotes EMIT CHANGES LIMIT 12;

@@ -1,0 +1,36 @@
+package io.confluent.developer;
+
+import io.confluent.ksql.function.udf.Udf;
+import io.confluent.ksql.function.udf.UdfDescription;
+import io.confluent.ksql.function.udf.UdfParameter;
+import com.google.crypto.tink.Aead;
+import com.google.crypto.tink.KeysetHandle;
+import com.google.crypto.tink.aead.AesGcmKeyManager;
+import com.google.crypto.tink.KeyTemplate;
+import com.google.crypto.tink.config.TinkConfig;	
+import com.google.crypto.tink.aead.AeadConfig;
+import com.google.crypto.tink.Registry;
+import com.google.crypto.tink.CleartextKeysetHandle;
+import com.google.crypto.tink.KeysetHandle;
+import com.google.crypto.tink.aead.AesGcmKeyManager;
+import com.google.crypto.tink.JsonKeysetWriter;
+import java.io.File;
+import java.util.Base64;
+import java.security.Key;
+
+
+
+@UdfDescription(name = "vwap", description = "Volume weighted encrypt")
+public class EncryptorUDF {
+
+//    byte[] decodedBytes = Base64.getDecoder().decode(encodedString);
+
+    @Udf(description = "encoder to simulate encryption")
+    public String encryptor(
+            @UdfParameter(value = "name")
+            final String name
+            ) {
+            String encodedString = Base64.getEncoder().encodeToString(name.getBytes());
+        return (encodedString);
+    }
+}

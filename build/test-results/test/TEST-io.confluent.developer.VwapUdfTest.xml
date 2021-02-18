@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="io.confluent.developer.VwapUdfTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2021-02-11T19:22:32" hostname="JB-ISR-LPTP0001" time="0.003">
+  <properties/>
+  <testcase name="testVwap" classname="io.confluent.developer.VwapUdfTest" time="0.002"/>
+  <testcase name="testVwapAllInts" classname="io.confluent.developer.VwapUdfTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
